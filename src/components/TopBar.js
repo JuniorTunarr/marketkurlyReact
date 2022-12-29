@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { TfiClose } from "react-icons/tfi";
+import { Link } from "react-router-dom";
+
 const TopBarWrap = styled.div`
   position: relative;
   text-align: center;
@@ -19,20 +21,46 @@ const TopBarProp = styled.div`
   font-weight: 700;
 `;
 function TopBar() {
-  const logo = {};
+  const [isClicked, setIsClicked] = useState(true);
   return (
     <TopBarWrap>
-      <TopBarProp>
-        지금 가입하고 인기상품 <b className="won100Size">100원</b>에 받아가세요!
-        <TfiClose
-          size="18"
-          style={{
-            position: "absolute",
-            top: 11,
-            right: "7%",
-          }}
-        />
-      </TopBarProp>
+      {isClicked && (
+        <TopBarProp>
+          지금 가입하고 인기상품 <b className="won100Size">100원</b>에
+          받아가세요!
+          <TfiClose
+            size="18"
+            style={{
+              position: "absolute",
+              top: 11,
+              right: "7%",
+              fill: "#fff",
+            }}
+            onClick={() => setIsClicked(false)}
+          />
+        </TopBarProp>
+      )}
+      <nav className={isClicked === true ? "topnav" : "topnav top-minus"}>
+        <ul>
+          <Link to="/join">
+            <a href="#!">
+              <li className="headerColor">
+                회원가입&emsp;<span className="headerColorX">|&emsp;</span>
+              </li>
+            </a>
+          </Link>
+          <Link to="/login">
+            <a href="#!">
+              <li>
+                로그인&emsp;<span className="headerColorX">|&emsp;</span>
+              </li>
+            </a>
+          </Link>
+          <a href="#!">
+            <li>고객센터 ▼&emsp;</li>
+          </a>
+        </ul>
+      </nav>
     </TopBarWrap>
   );
 }
