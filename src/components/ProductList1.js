@@ -73,10 +73,11 @@ function ProductList1() {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1600,
+        breakpoint: 1900,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
+          initialSlide: 4,
         },
       },
       {
@@ -91,13 +92,6 @@ function ProductList1() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],

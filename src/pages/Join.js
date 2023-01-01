@@ -6,8 +6,6 @@ import Top from "../components/Top";
 function Join() {
   return (
     <div class="container">
-      <TopBar />
-      <Top />
       <div className="container">
         <div id="wrapper">
           <div id="joinHeader">회원가입</div>
@@ -354,7 +352,6 @@ function Join() {
                   </div>
                 </div>
                 <div id="checkboxTotalWrap1">
-                  ㄴ
                   <span>
                     동의 시 한달 간[5%적립] + [2만원 이상 무료배송] 첫 주문 후
                     안내
@@ -387,21 +384,6 @@ function Join() {
             </div>
           </div>
         </div>
-        <footer>
-          <hr class="hr2" />
-          <img class="fi" src="../image/footer.png" alt="푸터 이미지" />
-          <div class="divfp">
-            <p class="fp">
-              컬리에서 판매되는 상품 중에는 마켓컬리에 입점한 개별 판매자가
-              판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
-              <br />
-              마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서
-              통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질,
-              교환/환불 등 의무와 책임을 부담하지 않습니다.
-              <br />© KURLY CORP. ALL RIGHTS RESERVED
-            </p>
-          </div>
-        </footer>
       </div>
     </div>
   );

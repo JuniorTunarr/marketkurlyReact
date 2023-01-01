@@ -1,12 +1,127 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+const ManuBarWrap = styled.header`
+  box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
+`;
 const ListWrap = styled.ul`
   &:hover {
-    li {
+    li a {
       color: rgb(95, 0, 128);
       text-decoration: underline;
     }
   }
+  /* fix시! */
+  .fixed {
+    width: 1050px;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    position: sticky;
+    z-index: 5;
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+  }
+  .font16 {
+    font-size: 15px;
+  }
+  .manuBar1 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 56px;
+    margin: 0px auto;
+  }
+  .manuBar1Prop0 {
+    width: 16px;
+    height: 14px;
+    margin-right: 14px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMTZ2MS43SDBWMHptMCA2LjE1aDE2djEuN0gwdi0xLjd6bTAgNi4xNWgxNlYxNEgwdi0xLjd6IiBmaWxsPSIjMzMzIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==)
+      0px 0px / 16px 14px no-repeat;
+  }
+  .manuBar1Prop {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgb(51, 51, 51);
+  }
+  .main1 {
+    display: flex;
+    flex: 1;
+    float: center;
+    font-size: 30px;
+    height: 60px;
+  }
+
+  .main1 > li {
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    margin-right: 60px;
+  }
+
+  .main1 > li:hover .main2 {
+    left: 0;
+    color: rgb(95, 0, 128);
+  }
+
+  .main1 > li a {
+    display: block;
+  }
+
+  .main1 > li a:hover {
+    color: black;
+    font-weight: bold;
+  }
+
+  .main2 {
+    width: 200px;
+    text-align: left;
+    font-size: 16px;
+    position: absolute;
+    top: 50px;
+    left: -9999px;
+    background: #fff;
+    color: black !important;
+    z-index: 10;
+  }
+
+  .main2 > li {
+    position: relative;
+    margin: -10px 0 -10px 0;
+  }
+  .main2 > li:hover {
+    color: rgb(95, 0, 128);
+  }
+  .main2 > li:hover .main3 {
+    background-color: #eee;
+    color: black;
+    left: 100%;
+  }
+
+  .main2 > li a,
+  .main3 > li a {
+    border-radius: 10px;
+    margin: 10px;
+  }
+  .main3 > li {
+    margin: -10px 0 -10px 0;
+  }
+  .main3 {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    width: 250px;
+    z-index: 100;
+  }
+
+  .main3 > li a:hover {
+    color: rgb(95, 0, 128);
+  }
+`;
+const HeadColor = styled.span`
+  color: rgb(95, 0, 128);
 `;
 function ManuBar() {
   const [ScrollY, setScrollY] = useState(0); // window 의 pageYOffset값을 저장
@@ -29,9 +144,8 @@ function ManuBar() {
       window.removeEventListener("scroll", handleScroll);
     }; //  window 에서 스크롤을 감시를 종료
   });
-  // const [isHovering, setIsHovering] = useState(0);
   return (
-    <div className={`manuBar ${ScrollActive ? "fixed" : ""}`}>
+    <ManuBarWrap className={` ${ScrollActive ? "fixed" : ""}`}>
       <div className="manuBar1">
         <ListWrap className="main1">
           <li>
@@ -682,14 +796,14 @@ function ManuBar() {
             <div className="deliver">
               <a href="#!" className="deliver1">
                 <b style={{ color: "gray" }}>
-                  <span className="headerColor">&nbsp;샛별·택배</span> 배송안내
+                  <HeadColor>&nbsp;샛별·택배</HeadColor> 배송안내
                 </b>
               </a>
             </div>
           </div>
         </ListWrap>
       </div>
-    </div>
+    </ManuBarWrap>
   );
 }
 

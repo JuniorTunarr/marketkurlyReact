@@ -8,6 +8,36 @@ const TopBarWrap = styled.div`
   text-align: center;
   min-width: 1050px;
   background: rgb(95, 0, 128);
+  .headerColor {
+    color: #5f0080;
+  }
+  .headerColorX {
+    color: grey !important;
+  }
+  .topnav {
+    position: absolute;
+    right: 40px;
+    top: 50px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  .top-minus {
+    top: 10px;
+  }
+  .topnav ul {
+    margin-right: 60px;
+  }
+
+  .topnav li {
+    float: left;
+    position: relative;
+  }
+  .topnav li a {
+    font-size: 12px;
+    width: 43px;
+  }
 `;
 const TopBarProp = styled.div`
   height: 42px;
